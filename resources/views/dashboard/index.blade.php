@@ -60,6 +60,11 @@
     @if (Auth::user()->type == 1)
         <script>
             window.onload = () => {
+                //Public example channel anyone can access it even if thery are not using your web app
+                 // Echo.channel('example').listen('Example',(event)=>{
+                //     console.log(event);
+                // })
+                //private channel only your site users can access it
                 Echo.private('adminNotification').listen('AdminNotification', (event) => {
                     console.log(event);
                     Swal.fire({
